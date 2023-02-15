@@ -4,11 +4,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 import streamlit as st
-from sklearn.model_selection import KFold
+from sklearn.model_selection import KFold, GridSearchCV, cross_val_score
 from sklearn.linear_model import LinearRegression
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import GridSearchCV
+from sklearn.svm import SVC
+from category_encoders import OrdinalEncoder
 
 @st.cache
 def load_data():
